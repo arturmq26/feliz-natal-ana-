@@ -4,18 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="intro.js"></script>
-
   <title></title>
 </head>
-<body></body>
-</html>
-
-
+<body>
 <section class="intro">
   A long time ago, in a galaxy far,<br> far away....
 </section>
+<audio id="audio" src="audio/starwars.mp3"></audio>
+<script>
+  const audio = document.getElementById("audio");
 
+  // aguarda o primeiro clique do usuário (autoplay garantido)
+  document.addEventListener("click", () => {
+
+    // espera o tempo da intro (9s = quando a logo começa)
+    setTimeout(() => {
+      audio.volume = 0;
+      audio.play();
+
+      // fade in suave
+      let vol = 0;
+      const fade = setInterval(() => {
+        if (vol < 0.6) {
+          vol += 0.02;
+          audio.volume = vol;
+        } else {
+          clearInterval(fade);
+        }
+      }, 200);
+
+    }, 9000);
+
+  }, { once: true });
+</script>
 <section class="logo">
       <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   width="693.615px" height="419.375px" viewBox="0 0 693.615 419.375" enable-background="new 0 0 693.615 419.375"
@@ -118,3 +139,6 @@
   </div>  
 </div>
 <img id="final-image" src="img/final.gif" alt="Feliz Natal Ana!">
+  <script src="js/intro.js"></script>
+</body>
+</html>
