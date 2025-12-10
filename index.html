@@ -10,33 +10,6 @@
 <section class="intro">
   A long time ago, in a galaxy far,<br> far away....
 </section>
-<audio id="audio" src="audio/starwars.mp3"></audio>
-<script>
-  const audio = document.getElementById("audio");
-
-  // aguarda o primeiro clique do usuário (autoplay garantido)
-  document.addEventListener("click", () => {
-
-    // espera o tempo da intro (9s = quando a logo começa)
-    setTimeout(() => {
-      audio.volume = 0;
-      audio.play();
-
-      // fade in suave
-      let vol = 0;
-      const fade = setInterval(() => {
-        if (vol < 0.6) {
-          vol += 0.02;
-          audio.volume = vol;
-        } else {
-          clearInterval(fade);
-        }
-      }, 200);
-
-    }, 9000);
-
-  }, { once: true });
-</script>
 <section class="logo">
       <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   width="693.615px" height="419.375px" viewBox="0 0 693.615 419.375" enable-background="new 0 0 693.615 419.375"
@@ -132,13 +105,14 @@
 <div id="board">  
   <div id="content">
     <p id="title">Episode XII</p>
-    <p id="subtitle">FELIZ NATAL ANA !!!</p>
+    <p id="subtitle">DIA DE NATAL</p>
     <br>
     <!-- And make it cheesy ! -->
-    <p> te desejo tudo de bom nesse natal!! </p>        
+    <p>Oi, Ana. Gostaria de te desejar um Feliz Natal. Te desejo tudo de bom. Sou muito feliz por ter você na minha vida, te amo demais, você é uma pessoa incrível. Que a força do natal esteja com você,Aproveite muito seu dia. Feliz natal!  </p>        
   </div>  
 </div>
 <img id="final-image" src="img/final.gif" alt="Feliz Natal Ana!">
+<audio id="audio" src="audio/starwars.mp3"></audio>
   <script src="js/intro.js"></script>
 </body>
 </html>
