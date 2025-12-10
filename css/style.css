@@ -131,7 +131,7 @@ p {
   opacity: 0;
 
   animation: finalImageAnim 8s ease-out forwards;
-  animation-delay: 25s; /* aparece exatamente quando a logo some */
+  animation-delay: 30s; /* aparece exatamente quando a logo some */
 }
 
 @keyframes finalImageAnim {
