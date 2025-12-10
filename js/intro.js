@@ -19,24 +19,8 @@ function getRandomPosition() {
     var randomY = Math.floor(Math.random()*y);
     return [randomX,randomY];
 }
-const audio = document.getElementById("audio");
-
 document.addEventListener("click", () => {
-
-  setTimeout(() => {
-    audio.volume = 0;
-    audio.play();
-
-    let vol = 0;
-    const fadeIn = setInterval(() => {
-      if (vol < 0.6) {
-        vol += 0.02;
-        audio.volume = vol;
-      } else {
-        clearInterval(fadeIn);
-      }
-    }, 200);
-
-  }, 6000);
-
+  const audio = document.getElementById("audio");
+  audio.muted = false;
+  audio.play();
 }, { once: true });
